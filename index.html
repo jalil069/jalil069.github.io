@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Civil Engineering: Fields and Their Uses</title>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f7f5f0; --surface:#ffffff; --text:#1d2430; --muted:#5b6575; --line:#e2ddd2;
+  --accent:#c2570c; --s1:#2f5d8a; --s2:#b4561b; --s3:#2e7d5b; --s4:#7a5a3a;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14181f; --surface:#1d232d; --text:#eceef2; --muted:#a3acba; --line:#2f3743;
+    --accent:#f08a3c; --s1:#6aa3d6; --s2:#e58a4f; --s3:#5fbf94; --s4:#c49a6c; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14181f; --surface:#1d232d; --text:#eceef2; --muted:#a3acba; --line:#2f3743;
+  --accent:#f08a3c; --s1:#6aa3d6; --s2:#e58a4f; --s3:#5fbf94; --s4:#c49a6c; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Georgia,"Times New Roman",serif}
+h1,h2,h3,nav,.tag,.btn{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{display:flex;gap:6px 18px;flex-wrap:wrap;padding:16px 0;font-size:14px}
+nav a{color:var(--muted);text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
+.hero{padding:48px 0 40px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
+.hero p{max-width:640px;color:var(--muted);font-size:1.1rem;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;padding:36px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:18px;text-decoration:none;color:inherit}
+.card h3{margin:6px 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.5}
+.icon{font-size:1.8rem}
+section.field{padding:44px 0;border-top:1px solid var(--line)}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+section.field h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:6px 0 12px;letter-spacing:-.01em}
+.lead{color:var(--muted);max-width:720px;font-size:1.05rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.box h3{margin:0 0 8px;font-size:.95rem;color:var(--c)}
+.box ul{margin:0;padding-left:18px}
+.box li{margin:5px 0;font-size:.97rem}
+.fact{margin-top:18px;padding:14px 18px;border-left:4px solid var(--c);background:var(--surface);border-radius:0 8px 8px 0;font-size:.97rem}
+.fig{display:block;width:100%;max-width:520px;height:auto;margin-top:18px;color:var(--c)}
+button.btn{border:0;cursor:pointer}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;font-size:.97rem;cursor:pointer}
+.opt.ok{border-color:var(--s3);background:color-mix(in srgb,var(--s3) 22%,var(--surface))}
+.opt.no{border-color:#c0392b;background:color-mix(in srgb,#c0392b 22%,var(--surface))}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.row{margin:10px 0;font-family:system-ui,sans-serif;font-size:.92rem}
+.out{font-family:system-ui,sans-serif;font-weight:600;margin-top:8px}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <strong style="color:var(--text)">🏗️ CivilWorld</strong>
+    <a href="#structural">Structural</a>
+    <a href="#transportation">Transportation</a>
+    <a href="#environmental">Environmental</a>
+    <a href="#geotechnical">Geotechnical</a>
+    <a href="#try">Try it</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#careers">Careers</a>
+  </nav>
+
+  <header class="hero">
+    <h1>The engineering behind everything you stand on, drive over, and drink.</h1>
+    <p>Civil engineering designs, builds, and maintains the physical world: buildings, roads, bridges, water systems, and the ground beneath them. Explore four of its core fields and how they’re used.</p>
+    <a class="btn" href="#structural">Start exploring</a>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="#structural" style="--c:var(--s1)"><div class="icon">🏢</div><h3>Structural</h3><p>Keeping buildings and bridges standing safely.</p></a>
+    <a class="card" href="#transportation" style="--c:var(--s2)"><div class="icon">🛣️</div><h3>Transportation</h3><p>Moving people and goods efficiently.</p></a>
+    <a class="card" href="#environmental" style="--c:var(--s3)"><div class="icon">💧</div><h3>Environmental</h3><p>Clean water, clean air, and safe waste.</p></a>
+    <a class="card" href="#geotechnical" style="--c:var(--s4)"><div class="icon">⛰️</div><h3>Geotechnical</h3><p>Understanding soil and rock under every project.</p></a>
+  </div>
+
+  <section class="field" id="structural" style="--c:var(--s1)">
+    <span class="tag">Field 01</span>
+    <h2>Structural Engineering</h2>
+    <p class="lead">Structural engineers analyze and design the load-bearing frames of buildings, bridges, towers, and dams, making sure they resist gravity, wind, earthquakes, and time.</p>
+    <div class="cols">
+      <div class="box"><h3>What they do</h3><ul>
+        <li>Calculate loads and forces on a structure</li>
+        <li>Select materials: steel, concrete, timber, composites</li>
+        <li>Design beams, columns, slabs, and foundations</li>
+        <li>Assess and retrofit aging structures</li></ul></div>
+      <div class="box"><h3>Where it’s used</h3><ul>
+        <li>Skyscrapers and stadiums</li>
+        <li>Bridges and flyovers</li>
+        <li>Dams, towers, and industrial plants</li>
+        <li>Earthquake-resistant housing</li></ul></div>
+      <div class="box"><h3>Tools and concepts</h3><ul>
+        <li>Finite element analysis</li>
+        <li>ETABS, STAAD.Pro, SAP2000</li>
+        <li>Reinforced and prestressed concrete</li>
+        <li>Seismic and wind design codes</li></ul></div>
+    </div>
+    <svg class="fig" viewBox="0 0 400 90" role="img" aria-label="Truss bridge diagram"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 70H380M20 70L80 30H320L380 70M80 30V70M140 30V70M200 30V70M260 30V70M320 30V70M80 30L140 70L200 30L260 70L320 30"/></g></svg>
+    <div class="fact"><strong>Why it matters:</strong> A good structural design is invisible. It only gets noticed when it fails, which is why safety factors and codes are so strict.</div>
+  </section>
+
+  <section class="field" id="transportation" style="--c:var(--s2)">
+    <span class="tag">Field 02</span>
+    <h2>Transportation Engineering</h2>
+    <p class="lead">Transportation engineers plan, design, and operate the systems that move people and freight safely and efficiently, from local streets to airports and railways.</p>
+    <div class="cols">
+      <div class="box"><h3>What they do</h3><ul>
+        <li>Design highways, intersections, and pavements</li>
+        <li>Model traffic flow and forecast demand</li>
+        <li>Plan public transit and metro networks</li>
+        <li>Improve road safety and reduce congestion</li></ul></div>
+      <div class="box"><h3>Where it’s used</h3><ul>
+        <li>Expressways and urban roads</li>
+        <li>Railways and metro systems</li>
+        <li>Airports and seaports</li>
+        <li>Smart traffic signals and city planning</li></ul></div>
+      <div class="box"><h3>Tools and concepts</h3><ul>
+        <li>Traffic simulation (VISSIM, SUMO)</li>
+        <li>Geometric and pavement design</li>
+        <li>GIS and demand modeling</li>
+        <li>Intelligent transport systems</li></ul></div>
+    </div>
+    <svg class="fig" viewBox="0 0 400 90" role="img" aria-label="Road diagram"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M0 75L400 30M0 90L400 45"/><path d="M0 82L400 37" stroke-dasharray="14 10"/></g></svg>
+    <div class="fact"><strong>Why it matters:</strong> Small design choices, such as signal timing or lane width, can save thousands of hours of travel time and prevent accidents.</div>
+  </section>
+
+  <section class="field" id="environmental" style="--c:var(--s3)">
+    <span class="tag">Field 03</span>
+    <h2>Environmental Engineering</h2>
+    <p class="lead">Environmental engineers protect public health and ecosystems by providing safe drinking water, treating wastewater, managing waste, and controlling pollution.</p>
+    <div class="cols">
+      <div class="box"><h3>What they do</h3><ul>
+        <li>Design water and wastewater treatment plants</li>
+        <li>Manage solid and hazardous waste</li>
+        <li>Control air and noise pollution</li>
+        <li>Assess environmental impact of projects</li></ul></div>
+      <div class="box"><h3>Where it’s used</h3><ul>
+        <li>City water supply and sewage systems</li>
+        <li>Landfills and recycling facilities</li>
+        <li>Industrial effluent treatment</li>
+        <li>Flood control and stormwater management</li></ul></div>
+      <div class="box"><h3>Tools and concepts</h3><ul>
+        <li>Water quality modeling</li>
+        <li>Biological and chemical treatment</li>
+        <li>Environmental Impact Assessment (EIA)</li>
+        <li>Sustainability and climate adaptation</li></ul></div>
+    </div>
+    <svg class="fig" viewBox="0 0 400 95" role="img" aria-label="Water treatment flow"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="20" y="25" width="80" height="40" rx="4"/><rect x="160" y="25" width="80" height="40" rx="4"/><rect x="300" y="25" width="80" height="40" rx="4"/><path d="M100 45H160M240 45H300"/></g><g fill="currentColor" font-size="11" font-family="system-ui" text-anchor="middle"><text x="60" y="84">Intake</text><text x="200" y="84">Treatment</text><text x="340" y="84">Clean water</text></g></svg>
+    <div class="fact"><strong>Why it matters:</strong> Clean water and sanitation prevent disease on a massive scale. They’re among the most effective public health measures ever built.</div>
+  </section>
+
+  <section class="field" id="geotechnical" style="--c:var(--s4)">
+    <span class="tag">Field 04</span>
+    <h2>Geotechnical Engineering</h2>
+    <p class="lead">Geotechnical engineers study the behavior of soil and rock to make sure the ground can safely support what we build on it, or is itself stable.</p>
+    <div class="cols">
+      <div class="box"><h3>What they do</h3><ul>
+        <li>Investigate sites with boreholes and lab tests</li>
+        <li>Determine soil strength and settlement</li>
+        <li>Design foundations, piles, and retaining walls</li>
+        <li>Analyze slope stability and landslide risk</li></ul></div>
+      <div class="box"><h3>Where it’s used</h3><ul>
+        <li>Foundations for buildings and bridges</li>
+        <li>Tunnels and underground metros</li>
+        <li>Earth dams and embankments</li>
+        <li>Soft-soil and delta regions, ground improvement</li></ul></div>
+      <div class="box"><h3>Tools and concepts</h3><ul>
+        <li>Standard Penetration Test (SPT)</li>
+        <li>Bearing capacity and consolidation</li>
+        <li>Liquefaction analysis</li>
+        <li>Software like PLAXIS and GeoStudio</li></ul></div>
+    </div>
+    <svg class="fig" viewBox="0 0 400 100" role="img" aria-label="Foundation in soil layers"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M0 40H400M0 62H400" /><path d="M0 82H400" stroke-dasharray="6 5"/><rect x="170" y="22" width="60" height="18"/><path d="M200 0V22"/></g><g fill="currentColor" font-size="11" font-family="system-ui"><text x="8" y="55">Topsoil</text><text x="8" y="76">Clay</text><text x="8" y="96">Bedrock</text></g></svg>
+    <div class="fact"><strong>Why it matters:</strong> Many famous failures, like the Leaning Tower of Pisa, came down to the ground, not the structure above it.</div>
+  </section>
+
+  <section class="field" id="try" style="--c:var(--s1)">
+    <span class="tag">Try it</span>
+    <h2>Beam deflection demo</h2>
+    <p class="lead">A simply supported steel beam with a point load at midspan. Change the load and span to see how much it bends (exaggerated in the drawing).</p>
+    <div class="box" style="margin-top:18px">
+      <div class="row">Load: <b id="pv">100</b> kN<input id="p" type="range" min="10" max="200" value="100"></div>
+      <div class="row">Span: <b id="lv">6</b> m<input id="l" type="range" min="2" max="10" step="0.5" value="6"></div>
+      <svg viewBox="0 0 400 120" style="width:100%;height:auto;color:var(--c)" role="img" aria-label="Beam under load"><path id="bm" d="M40 50Q200 50 360 50" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M40 56L28 76H52ZM360 56L348 76H372Z" fill="currentColor"/><path id="ar" d="M200 8V40M194 32L200 40L206 32" fill="none" stroke="var(--accent)" stroke-width="3"/></svg>
+      <div class="out" id="res"></div>
+    </div>
+    <div class="fact">Uses δ = PL³ / 48EI with E = 200 GPa and I = 8000 cm⁴. The common serviceability limit is span/360. This is a teaching model, not a design tool.</div>
+  </section>
+
+  <section class="field" id="quiz" style="--c:var(--s3)">
+    <span class="tag">Quiz</span>
+    <h2>Test your knowledge</h2>
+    <div class="box" id="qz" style="margin-top:18px"></div>
+  </section>
+
+  <section class="field" id="careers" style="--c:var(--accent)">
+    <span class="tag">Careers</span>
+    <h2>Becoming a civil engineer</h2>
+    <div class="cols">
+      <div class="box"><h3>Education</h3><ul><li>Bachelor’s degree in civil engineering (usually 4 years)</li><li>Optional master’s in a specialty field</li><li>Professional registration or licensure in your country</li></ul></div>
+      <div class="box"><h3>Skills</h3><ul><li>Mathematics and mechanics</li><li>AutoCAD, Revit, and analysis software</li><li>Site work, teamwork, and communication</li></ul></div>
+      <div class="box"><h3>Career paths</h3><ul><li>Design consultancies</li><li>Construction companies</li><li>Government and infrastructure agencies</li><li>Research and teaching</li></ul></div>
+    </div>
+  </section>
+
+  <section class="field" id="more">
+    <span class="tag" style="--c:var(--muted)">More branches</span>
+    <h2>Other fields to explore</h2>
+    <div class="grid" style="padding:18px 0 0">
+      <div class="card" style="--c:var(--s1)"><div class="icon">🌊</div><h3>Water Resources</h3><p>Dams, canals, irrigation, flood control, and river management.</p></div>
+      <div class="card" style="--c:var(--s2)"><div class="icon">🏗️</div><h3>Construction Management</h3><p>Planning schedules, budgets, safety, and site delivery.</p></div>
+      <div class="card" style="--c:var(--s3)"><div class="icon">📐</div><h3>Surveying and Geomatics</h3><p>Measuring land and mapping with GPS, drones, and GIS.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    Built as an educational overview. Diagrams are simplified illustrations.
+  </footer>
+</div>
+<script>
+(function(){
+var p=document.getElementById('p'),l=document.getElementById('l');
+function beam(){
+  var P=+p.value,L=+l.value;
+  var d=P*1000*Math.pow(L,3)/(48*200e9*8e-5)*1000;
+  var lim=L*1000/360,dd=Math.min(45,d*0.6);
+  document.getElementById('pv').textContent=P;
+  document.getElementById('lv').textContent=L;
+  document.getElementById('bm').setAttribute('d','M40 50Q200 '+(50+2*dd)+' 360 50');
+  document.getElementById('res').textContent='Deflection: '+d.toFixed(1)+' mm (limit '+lim.toFixed(1)+' mm) — '+(d<=lim?'OK ✅':'Too flexible ⚠️');
+}
+p.oninput=l.oninput=beam;beam();
+var Q=[
+['Which field studies soil bearing capacity?',['Structural','Transportation','Environmental','Geotechnical'],3],
+['Who designs water and wastewater treatment plants?',['Environmental engineers','Surveyors','Traffic engineers','Steel detailers'],0],
+['Traffic flow modeling belongs to which field?',['Geotechnical','Transportation','Structural','Environmental'],1],
+['Calculating loads on a beam is mainly…',['Structural engineering','Transport planning','Waste management','Soil mapping'],0],
+['The Leaning Tower of Pisa leans mainly because of…',['Its steel frame','Heavy traffic','Soft foundation soil','Roof design'],2]
+];
+var i=0,s=0,el=document.getElementById('qz');
+function show(){
+  el.innerHTML='';
+  if(i>=Q.length){
+    var r=document.createElement('p');r.innerHTML='<b>Score: '+s+' / '+Q.length+'</b>';el.appendChild(r);
+    var b=document.createElement('button');b.className='btn';b.textContent='Try again';
+    b.onclick=function(){i=0;s=0;show();};el.appendChild(b);return;
+  }
+  var h=document.createElement('p');h.innerHTML='<b>'+(i+1)+'/'+Q.length+'.</b> '+Q[i][0];el.appendChild(h);
+  Q[i][1].forEach(function(t,k){
+    var o=document.createElement('button');o.className='opt';o.textContent=t;
+    o.onclick=function(){
+      var all=el.querySelectorAll('.opt');
+      all.forEach(function(x){x.disabled=true;});
+      all[Q[i][2]].classList.add('ok');
+      if(k===Q[i][2]){s++;}else{o.classList.add('no');}
+      var n=document.createElement('button');n.className='btn';n.style.marginTop='10px';
+      n.textContent=i<Q.length-1?'Next':'See score';
+      n.onclick=function(){i++;show();};el.appendChild(n);
+    };
+    el.appendChild(o);
+  });
+}
+show();
+})();
+</script>
+</body>
+</html>
